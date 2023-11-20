@@ -8,34 +8,55 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <aside class="menu">
-    <label for="expand-menu"><div>메뉴</div></label>
-    <input type="checkbox" id="expand-menu" name="expand-menu">
+  <div class="loginbox">
+    <h2>로그인</h2>
+    <form action="#">
+        <fieldset>
+            <legend>로그인 구역</legend>
+            <label for="loginid">아이디(E-mail)</label>
+            <input type="text" id="loginid" placeholder="아이디(E-mail)을 입력해 주세요">
+            <label for="loginpw">비밀번호</label>
+            <input type="password" id="loginpw" placeholder="비밀번호를 입력해 주세요">
+            <ul>
+                <li><a href="#">아이디/비밀번호찾기</a></li>
+                <li><a href="#">회원가입</a></li>
+            </ul>
+            <button type="submit" id="loginBtn">로그인</button>
+            <button type="button" id="cancelBtn">취소</button>
+        </fieldset>
+        
+    </form>
+</div>
+  <aside class="side-bar">
+    <section class="side-bar__icon-box">
+      <section class="side-bar__icon-1">
+        <div></div>
+        <div></div>
+        <div></div>
+      </section>
+    </section>
     <ul>
-        <li><a href="#" class="item"><div>프로필</div></a></li>
-        <li><a href="#" class="item"><div>데이터사용량</div></a></li>
-        <li><a href="#" class="item"><div>내URL</div></a></li>
-        <li><a href="#" class="item"><div>구매내역</div></a></li>
-        <li><a href="#" class="item"><div>추천목록</div></a></li>
-        <li><a href="#" class="item"><div>설정</div></a></li>
+      <li><a href="#"><i class="fa-solid fa-cat"></i> Home</a></li>
+      <li><a href="#"><i class="fa-solid fa-cat"></i> 자기소개</a></li>
+      <li><a href="#"><i class="fa-solid fa-cat"></i> 여행</a></li>
+      <li><a href="#"><i class="fa-solid fa-cat"></i> 개발자로드맵</a></li>
+      <li><a href="#"><i class="fa-solid fa-cat"></i> 회원목록</a></li>
     </ul>
-</aside>
+  </aside>
   <header>
     <h1>My Website</h1>
   </header>
 
+  
   <nav>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#" id="showlogin">로그인/회원가입</a></li>
     </ul>
   </nav>
 
   <section>
     <article>
-      <h2>Article Title 1</h2>
-      <p>This is the content of the article... </p>
+      <img src="./images/html-system-for-websites-concept.jpg" alt="개발자 이미지">
     </article>
 
     <article>
@@ -43,15 +64,10 @@
       <p>This is the content of another article...</p>
     </article>
   </section>
-  
-  <aside>
-    <h2>Aside Content</h2>
-    <p>This is some additional content...</p>
-  </aside>
-  
-
   <footer>
     <p>&copy; 2023 My Website. All Rights Reserved.</p>
+    <p>이미지 출처 <a href="https://kr.freepik.com/free-photo/html-system-for-websites-concept_40728394.htm#query=%EA%B0%9C%EB%B0%9C%EC%9E%90&position=2&from_view=keyword&track=sph&uuid=8453c4df-05ec-4015-b142-7dcb98af5aeb">Freepik</a></p>
   </footer>
+  <script src="./css/login.js"></script>
 </body>
 </html>
