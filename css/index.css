@@ -10,7 +10,7 @@ article#asd img{
   object-fit: cover;
  }
  article#main img{
-  max-width: 30%; /* 또는 다른 적절한 너비 설정 */
+  max-width: 100%; /* 또는 다른 적절한 너비 설정 */
   height: 300px;
   
  }
