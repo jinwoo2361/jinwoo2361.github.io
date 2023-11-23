@@ -163,6 +163,22 @@ body {
   transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 X축 이동, Y축 고정 */
 }
 
+.side-bar>.status-ico {
+  text-align: right;
+  padding: 10px;
+  scale: 110%;
+}
+.side-bar > .status-ico > span:last-child {
+  display: none;
+}
+
+.side-bar:hover > .status-ico > span:last-child {
+  display: block;
+}
+
+.side-bar:hover > .status-ico > span:first-child {
+  display: none;
+}
 /* ----------------------------로그인 ----------------------------*/
 
 .loginbox{
