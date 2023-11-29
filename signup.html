@@ -79,53 +79,17 @@
         <br>
 
         <button type="button" onclick="submitForm()">가입하기</button>
+        <a href="./index.html"><button type="button">취소</button></a>
+
+        
     </form>
 
     <script>
-        function validatePassword() {
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('confirm-password');
-            const passwordMessage = document.getElementById('password-message');
-            const passwordError = document.getElementById('password-error');
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$/;
-
-            if (passwordRegex.test(passwordInput.value)) {
-                passwordMessage.textContent = '올바른 패스워드 형식입니다.';
-                passwordError.textContent = '';
-            } else {
-                passwordMessage.textContent = '';
-                passwordError.textContent = '영문자 대/소문자, 특수문자, 숫자를 포함하여 8~32자여야 합니다.';
-            }
-
-            // Check if passwords match
-            if (passwordInput.value !== confirmPasswordInput.value) {
-                document.getElementById('confirm-password-error').textContent = '비밀번호가 일치하지 않습니다.';
-            } else {
-                document.getElementById('confirm-password-error').textContent = '';
-            }
-
-        }
-
-        function showPasswordMessage() {
-            const passwordMessage = document.getElementById('password-message');
-            passwordMessage.textContent = '영문자 대/소문자, 특수문자, 숫자를 포함하여 8~32자여야 합니다.';
-        }
-
-        function checkRequired(fieldName) {
-            const input = document.getElementById(fieldName);
-            const error = document.getElementById(fieldName + '-error');
-
-            if (!input.value.trim()) {
-                error.textContent = '필수 입력 항목을 확인하세요.';
-            } else {
-                error.textContent = '';
-            }
-        }
-
         function submitForm() {
             if (isFormValid()) {
                 alert('회원가입이 완료되었습니다!');
-                
+                saveUser(); // 가입 완료 후 사용자 정보를 저장
+                window.location.href = 'userlist.html'; // 회원 목록 페이지로 이동
             } else {
                 alert('필수 입력 항목을 확인하세요.');
             }
@@ -143,14 +107,31 @@
 
             const passwordInput = document.getElementById('password');
             const confirmPasswordInput = document.getElementById('confirm-password');
-    
+
             if (passwordInput.value !== confirmPasswordInput.value) {
                 document.getElementById('confirm-password-error').textContent = '비밀번호가 일치하지 않습니다.';
                 return false;
             } else {
                 document.getElementById('confirm-password-error').textContent = '';
             }
-                return true;
+
+            return true;
+        }
+
+        function saveUser() {
+            const usernameInput = document.getElementById('username');
+            const emailInput = document.getElementById('email');
+            const addressInput = document.getElementById('address');
+
+            // 로컬 스토리지에 저장
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push({
+                username: usernameInput.value,
+                email: emailInput.value,
+                address: addressInput.value,
+                createdAt: Date.now(),
+            });
+            localStorage.setItem('users', JSON.stringify(users));
         }
     </script>
 </body>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/userlist.css">
+</head>
+<body>
+  <aside class="side-bar">
+    <div class="status-ico">
+      <span style="color: white;">▶</span>
+      <span style="color: white;">▼</span>
+    </div>
+    <ul>
+      <li><a href="./index.html"><i class="fa-solid fa-cat"></i> Home</a></li>
+      <li><a href="./introduce.html"><i class="fa-solid fa-cat"></i> 자기소개</a></li>
+      <li><a href="./travel.html"><i class="fa-solid fa-cat"></i> 여행</a></li>
+      <li><a href="./roadmap.html"><i class="fa-solid fa-cat"></i> 개발자<br>로드맵</a></li>
+      <li><a href="#"><i class="fa-solid fa-cat"></i> 회원목록</a></li>
+    </ul>
+  </aside>
+  <h2>회원 목록</h2>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>아이디</th>
+                <th>이메일</th>
+                <th>주소</th>
+                <th>가입일시</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+    </table>
+    <script>
+      function renderUsers() {
+          const users = JSON.parse(localStorage.getItem('users')) || [];
+          const userTableBody = document.getElementById('userTableBody');
+          userTableBody.innerHTML = '';
+
+          users.forEach(user => {
+              const row = document.createElement('tr');
+
+              // 일시를 mm/dd hh:mi 형식으로 포맷
+              const date = new Date(user.createdAt);
+              const formattedDate = `${date.getMonth() + 1}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+
+              // 각 열에 데이터 추가
+              row.innerHTML = `<td>${user.username}</td><td>${user.email}</td><td>${user.address}</td><td>${formattedDate}</td>`;
+
+              // 테이블의 tbody에 행 추가
+              userTableBody.appendChild(row);
+          });
+      }
+
+      // 페이지 로드 시 초기에 저장된 유저 목록을 화면에 표시
+      renderUsers();
+  </script>
+  
+</body>
+</html>
