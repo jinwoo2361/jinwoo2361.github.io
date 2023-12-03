@@ -116,3 +116,72 @@ div#load{
   margin-left: var(--div-offset);
 } 
 
+/* ////////////////////// */
+/* 메인 콘텐츠에 대한 스타일 추가 */
+#load {
+  margin-left: var(--div-offset);
+  padding: 20px; /* 가독성을 높이기 위한 패딩 추가 */
+}
+
+h1 {
+  color: #333;
+  border-bottom: 2px solid #333; /* 강조를 위한 h1 하단에 선 추가 */
+  padding-bottom: 10px; /* h1과 콘텐츠 간의 간격 추가 */
+}
+
+h2 {
+  color: #555;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px; /* 더 나은 간격을 위해 하단 여백 추가 */
+}
+
+/* 리스트에 대한 스타일 추가 */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* 링크에 대한 스타일 추가 */
+a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s ease; /* 링크 색상의 부드러운 전환을 위한 설정 */
+}
+
+a:hover {
+  color: #0056b3; /* 호버 시 링크 색상 변경 */
+}
+
+/* 사이드바 상태 아이콘에 대한 스타일 추가 */
+.side-bar > .status-ico {
+  text-align: right;
+  padding: 10px;
+}
+
+.side-bar > .status-ico > span {
+  display: inline-block;
+  margin-left: 5px; /* 아이콘 간 간격 추가 */
+}
+
+/* 사이드바 링크에 대한 스타일 추가 */
+.side-bar ul > li > a {
+  display: block;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 20px 20px 20px 50px; /* 더 나은 정렬을 위한 패딩 조정 */
+  transition: background-color 0.3s ease, border-bottom 0.3s ease; /* 배경 및 테두리에 대한 부드러운 전환을 위한 설정 */
+}
+
+.side-bar > ul > li:hover > a {
+  background-color: #555;
+  border-bottom: 1px solid #999;
+}
+
