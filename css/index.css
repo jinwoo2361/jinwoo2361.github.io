@@ -142,16 +142,6 @@ body {
   border-bottom: 1px solid #999;
 }
 
-/* 1차 메뉴의 항목이 마우스 인식 시에 2차 메뉴 등장 삭제*/
-/* .side-bar > ul > li:hover > ul { */
-  /* display: block; */
-  /* position: absolute; */
-  /* background-color: #888; */
-  /* top: 0;         2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
-  /* left: 100%;     2차 메뉴를 1차 메뉴의 너비만큼 이동 */
-  /* width: 100%;    1차 메뉴의 너비를 상속 */
-/* } */
-
 .side-bar {
   border-radius: 20px;
   transform: translate(calc(var(--side-bar-width) * -0.95), 0);  /* X축 이동, Y축 고정 */
@@ -218,21 +208,21 @@ body {
   /* 요소를 화면 밖으로 처리 */
   position: absolute; left: -999em;
 
-  /* 웹접근성으로 스크린리더기가 읽어줘야 하므로 display: none;을 사용하지 말것 */
+
 }
 .loginbox label{
   display: block;
   font-size: 12px; color: #333;
-  margin-bottom: 10px; /* 동위선택자와의 간격 조정 */
+  margin-bottom: 10px; 
   text-align: left;
 }
 .loginbox input{
   display: block;
   width: 100%; height: 50px;
-  margin-bottom: 25px; /* 동위선택자와의 간격 조정 */
+  margin-bottom: 25px; 
   border: none; background-color: #ededed;
-  padding: 0 20px; /* 앞상하 뒷좌우 */
-  box-sizing: border-box; /* 패딩수치를 인사이드 처리 */
+  padding: 0 20px; 
+  box-sizing: border-box; 
 }
 
 .loginbox ul{
@@ -250,10 +240,10 @@ body {
   margin-left: 4px; /* 테두리 바깥쪽 여백 */
 }
 .loginbox a{
-  /* 글자관련은 보통 최종태그에 줘야 적용 */
+  
   color: #333; font-size: 12px;
 
-  /* 현재 위치에서 상대적 이동 */
+  
   position: relative; top: -2px;
 }
 .loginbox button{
